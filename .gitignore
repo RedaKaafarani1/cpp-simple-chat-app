@@ -1,0 +1,35 @@
+# Ignore build directories
+/build/
+
+# Ignore object files
+*.o
+*.a
+*.so
+*.obj
+*.lo
+
+# Ignore executable files
+*.exe
+*.out
+*.app
+
+# Ignore debug and release directories
+/debug/
+release/
+
+# Ignore IDE/project files
+*.vscode/
+*.idea/
+*.swp
+*.suo
+*.user
+*.userosscache
+*.sln
+
+# Ignore temporary files
+*.log
+*.bak
+*.tmp
+
+# Ignore compiled binary files
+*.class

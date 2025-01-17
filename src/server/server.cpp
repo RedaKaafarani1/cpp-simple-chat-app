@@ -1,4 +1,3 @@
-#include <iostream>
 #include "server.h"
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -6,6 +5,12 @@
 #include <unistd.h>
 #include <vector>
 #include <string.h>
+
+std::string charArrToString(char* arr)
+{
+    std::string s(arr);
+    return s;
+}
 
 void startServer(int port) {
     // create a socket
@@ -89,17 +94,18 @@ void startServer(int port) {
                 {
                     close(sd);
                     it = clients.erase(it);
-                    std::cout << "Client disconnected, socket fd is" << sd << std::endl;
+                    std::cout << "Client disconnected, socket fd is " << sd << std::endl;
                 }
                 else
                 {
                     buffer[valread] = '\0';
                     std::cout << "Message from client " << sd << ": " << buffer << std::endl;
+                    std::string finalMessage = "User " + std::to_string(sd) + ": " + charArrToString(buffer);
                     for (int client: clients)
                     {
                         if (client != sd)
                         {
-                            send(client, buffer, strlen(buffer), 0);
+                            send(client, finalMessage.c_str(), finalMessage.length(), 0);
                         }
                     }
                     ++it;
