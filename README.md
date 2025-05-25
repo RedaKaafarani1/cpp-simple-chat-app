@@ -4,8 +4,8 @@ This is a simple server/client application written in C++. A simple TCP server i
 
 ## How to start using it
 1. Start server in a terminal `./server`
-2. Start client in a another terminal `./client`
-3. As a client, you can type some commands to show help list, change name, to list connected users and to exit
+2. Start client(s) in (an)other terminal(s) `./client`
+3. As a client, you can type some commands to show help list, change name, to list connected users and to exit. It shows appropriate error message if the command is wrong.
 4. As a server, you see all the commands and messages from all the users and you get appropriate messages for connecting/disconnecting users
 
 ## To go further
@@ -15,4 +15,4 @@ Feel free to modify the code to add functionality or fix bugs.
 
 ## How to rebuild?
 
-If you change the code in any way, you can simple rebuild using `make`. Make sure CMAKE is installed on your machine.
+If you change the code in any way, you can simple rebuild using `make`. Make (no pun intended) sure CMAKE is installed on your machine.
